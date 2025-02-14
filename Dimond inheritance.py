@@ -115,6 +115,7 @@ def MyDate():
           - setMonth(month): Sets the month if within valid range (1-12).
           - setYear(year): Sets the year if within valid range (1900-2100).
       """
+
     def __init__(self, day, month, year=2020):
         """Initializes a MyDate instance with day, month, and year."""
 
@@ -179,6 +180,7 @@ def Person():
             - setDate(date): Sets the birth date.
             - setId(id): Sets the ID if positive.
         """
+
     def __init__(self, firstName, lastName, date, id):
         """Initializes a Person instance with first name, last name, date, and ID."""
 
@@ -378,6 +380,7 @@ def Faculty ():
     """
     Creates a Faculty class by extending the Person class with additional attributes for teaching, salary, and seniority.
     """
+
     def __init__(self, firstName, lastName, date, id, teaching, salary, seniority):
         """
         Initializes a new faculty member with given details.
@@ -505,6 +508,5 @@ def TA ():
     return make_class({'__init__': __init__, 'str': __str__, 'repr': __repr__, 'getStudentSeniority':getStudentSeniority, 'getFacultySeniority':getFacultySeniority,
                        'setStudentSeniority':setStudentSeniority, 'setFacultySeniority':setFacultySeniority}, [Student, Faculty] )
 TA = TA()  # Instantiate the TA class
-
 
 
