@@ -510,3 +510,165 @@ def TA ():
 TA = TA()  # Instantiate the TA class
 
 
+
+# Test classes
+def test_MyDate():
+    print("---------------------------------------------Test MyDate class-----------------------------------------------")
+
+    myDate = Date['new'](12, 3, 2003)
+
+    print(myDate['get']('str')())  # Should print "12.03.2003"
+    print(myDate['get']('getDay')())  # Should print 12
+    print(myDate['get']('getMonth')())  # Should print 3
+    print(myDate['get']('getYear')())  # Should print 2003
+    myDate['get']('setDay')(11)
+    myDate['get']('setMonth')(11)
+    myDate['get']('setYear')(1911)
+    print(myDate['get']('str')())  # Should print "12.03.2003"
+    print("-------------------------------------------------------------------------------------------------------------")
+
+
+
+    # print(myDate)  ## TODO test repr
+
+def test_Person():
+    print("---------------------------------------------Test Person class-----------------------------------------------")
+    myDate1 = Date['new'](15, 12, 1999)
+    myDate2 = Date['new'](15, 3, 2003)
+
+    myPerson = Person['new']('shulamit','Mor yossef', myDate1, 206576977)
+
+    print(myPerson['get']('str')())
+    print(myPerson['get']('getFirstName')())
+    print(myPerson['get']('getLastName')())
+    print(myPerson['get']('getDate')())
+    print(myPerson['get']('getId')())
+
+    myPerson['get']('setFirstName')('Hodaya')
+    myPerson['get']('setLastName')('Shirazie')
+    myPerson['get']('setDate')(myDate2)
+    myPerson['get']('setId')(7987)
+
+    print(myPerson['get']('str')())
+    print("-------------------------------------------------------------------------------------------------------------")
+
+def test_Student():
+    """
+    Test function to create a Student object and display its attributes,
+    both before and after modifying its information. This function
+    demonstrates the use of getter and setter methods for the Student class.
+
+    This function does the following:
+    1. Creates a Date object for two dates.
+    2. Creates a Student object with initial details.
+    3. Prints the student's attributes using the str and repr methods.
+    4. Prints the individual attributes using getter methods.
+    5. Modifies the student's attributes using setter methods and prints the updated details.
+    """
+    print("---------------------------------------------Test Student class-----------------------------------------------")
+    myDate1 = Date['new'](15, 12, 1999)
+    myDate2 = Date['new'](15, 3, 2003)
+
+    myStudent = Student['new']('shulamit', 'Mor yossef', myDate1, 206576977, 'swe', 100, 3)
+
+    # Display the student's current information
+    print(myStudent['get']('str')())
+    print(myStudent['get']('repr')())
+
+
+    # Print individual attributes using getter methods
+    print(myStudent['get']('getFirstName')())
+    print(myStudent['get']('getLastName')())
+    print(myStudent['get']('getDate')())
+    print(myStudent['get']('getId')())
+    print(myStudent['get']('getFaculty')())
+    print(myStudent['get']('getGrades')())
+    print(myStudent['get']('getSeniority')())
+
+    # Modify the student's details using setter methods
+    myStudent['get']('setFirstName')('Hodaya')
+    myStudent['get']('setLastName')('Shirazie')
+    myStudent['get']('setDate')(myDate2)
+    myStudent['get']('setId')(7987)
+    myStudent['get']('setFaculty')('math')
+    myStudent['get']('setGrades')(110)
+    myStudent['get']('setSeniority')(4)
+
+    # Display the updated student information
+    print(myStudent['get']('str')())
+    print(myStudent['get']('seniority'))
+    print("-------------------------------------------------------------------------------------------------------------")
+
+def test_Faculty ():
+    print("---------------------------------------------Test Faculty class-----------------------------------------------")
+    myDate1 = Date['new'](15, 12, 1999)
+    myDate2 = Date['new'](15, 3, 2003)
+
+    myFaculty = Faculty['new']('shulamit','Mor yossef', myDate1, 206576977, 'swe', 30000, 3)
+
+    print(myFaculty['get']('str')())
+    print(myFaculty['get']('repr')())
+
+    print(myFaculty['get']('getFirstName')())
+    print(myFaculty['get']('getLastName')())
+    print(myFaculty['get']('getDate')())
+    print(myFaculty['get']('getId')())
+    print(myFaculty['get']('getTeaching')())
+    print(myFaculty['get']('getSalary')())
+    print(myFaculty['get']('getSeniority')())
+
+
+    myFaculty['get']('setFirstName')('Hodaya')
+    myFaculty['get']('setLastName')('Shirazie')
+    myFaculty['get']('setDate')(myDate2)
+    myFaculty['get']('setId')(7987)
+    myFaculty['get']('setTeaching')('math')
+    myFaculty['get']('setSalary')(27000)
+    myFaculty['get']('setSeniority')(4)
+
+    print(myFaculty['get']('str')())
+    print("-------------------------------------------------------------------------------------------------------------")
+
+def test_TA ():
+    print("---------------------------------------------Test TA class-----------------------------------------------")
+    myDate1 = Date['new'](15, 12, 1999)
+    myDate2 = Date['new'](15, 3, 2003)
+
+    myTa= TA['new']('shulamit','Mor yossef', myDate1, 206576977, 'software_e', 100, 3, 'swe', 30000, 3)
+
+    print(myTa['get']('str')())
+    print(myTa['get']('repr')())
+
+    print(myTa['get']('getFirstName')())
+    print(myTa['get']('getLastName')())
+    print(myTa['get']('getDate')())
+    print(myTa['get']('getId')())
+    print(myTa['get']('getFaculty')())
+    print(myTa['get']('getGrades')())
+    print(myTa['get']('getStudentSeniority')())
+    print(myTa['get']('getTeaching')())
+    print(myTa['get']('getSalary')())
+    print(myTa['get']('getFacultySeniority')())
+
+
+    myTa['get']('setFirstName')('Hodaya')
+    myTa['get']('setLastName')('Shirazie')
+    myTa['get']('setDate')(myDate2)
+    myTa['get']('setId')(7987)
+    myTa['get']('setFaculty')('math')
+    myTa['get']('setGrades')(110)
+    myTa['get']('setStudentSeniority')(4)
+    myTa['get']('setTeaching')('math')
+    myTa['get']('setSalary')(27000)
+    myTa['get']('setFacultySeniority')(4)
+
+    print(myTa['get']('str')())
+    print("-------------------------------------------------------------------------------------------------------------")
+
+
+if __name__ == '__main__':
+    test_MyDate()
+    test_Person()
+    test_Student()
+    test_Faculty()
+    test_TA()
